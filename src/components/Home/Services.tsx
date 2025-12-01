@@ -81,7 +81,7 @@ const Services = () => {
       <div class="">
         {
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            <For each={services}>{(service) => <Card service={service} />}</For>
+            <For each={services}>{(service) => <Card {...service} />}</For>
           </div>
         }
       </div>
