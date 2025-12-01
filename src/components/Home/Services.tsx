@@ -11,6 +11,7 @@ interface Service {
   title: string;
   description: string;
   color: string;
+  image: string;
 }
 
 const Services = () => {
@@ -22,6 +23,7 @@ const Services = () => {
       description:
         "Beautiful, modern designs that capture your brand essence and engage your audience.",
       color: "from-red-500 to-orange-500",
+      image: "",
     },
     {
       icon: AiOutlineCode,
@@ -29,6 +31,7 @@ const Services = () => {
       description:
         "Custom-coded websites built with cutting-edge technologies for optimal performance.",
       color: "from-orange-500 to-amber-500",
+      image: "",
     },
     {
       icon: BsPhone,
@@ -36,6 +39,7 @@ const Services = () => {
       description:
         "Powerful WordPress websites with custom themes and plugins tailored to your needs.",
       color: "from-red-600 to-red-500",
+      image: "",
     },
     {
       icon: RiFinanceShoppingCart2Fill,
@@ -43,6 +47,7 @@ const Services = () => {
       description:
         "Full-featured online stores that convert visitors into customers and drive sales.",
       color: "from-amber-500 to-yellow-500",
+      image: "",
     },
     {
       icon: FiSearch,
@@ -50,6 +55,7 @@ const Services = () => {
       description:
         "Strategic optimization to boost your search rankings and online visibility.",
       color: "from-red-500 to-pink-500",
+      image: "",
     },
     {
       icon: BiSolidZap,
@@ -57,6 +63,7 @@ const Services = () => {
       description:
         "Lightning-fast websites optimized for speed, accessibility, and user experience.",
       color: "from-orange-600 to-red-600",
+      image: "",
     },
   ];
 
