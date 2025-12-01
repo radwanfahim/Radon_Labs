@@ -18,8 +18,8 @@ const Header = () => {
         <div class="flex justify-between items-center min-h-screen">
           {/* left */}
           <div>
-            <h1 class="roboto-slab text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight capitalize">
-              Driving business growth through
+            <h1 class="roboto-slab text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight capitalize">
+              Driving growth through
               <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
                 innovative web development.
               </span>
@@ -39,7 +39,7 @@ const Header = () => {
               {/* view work */}
               <a
                 href="#"
-                class="inline-flex items-center justify-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full hover:bg-white/20 transition-all border border-white/20"
+                class="inline-flex items-center justify-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full hover:bg-white/20 transition-all border border-white/20 "
               >
                 <span class="font-semibold">View Our Work</span>
               </a>
