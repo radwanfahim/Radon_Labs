@@ -4,9 +4,17 @@ interface CardData {
   description: string;
   color: string;
   image: string;
+  category: string;
 }
 
-const Card = ({ icon, title, description, color, image }: CardData) => {
+const Card = ({
+  icon,
+  title,
+  description,
+  color,
+  image,
+  category,
+}: CardData) => {
   const Icon = icon;
   const hasImage = Boolean(image);
   const padding = hasImage ? "p-0" : "p-8";
@@ -14,12 +22,25 @@ const Card = ({ icon, title, description, color, image }: CardData) => {
   const scaleEffect = hasImage
     ? ""
     : "group-hover:scale-110 transition-transform";
+  const hoverColor = hasImage
+    ? ""
+    : "bg-gradient-to-br from-red-50 to-orange-50";
+  const border = hasImage
+    ? ""
+    : "border border-gray-200 hover:border-red-500/20";
+
+  const shadow = hasImage ? "shadow-lg hover:shadow-2xl" : "hover:shadow-xl";
+  const titleHoverColor = hasImage ? "group-hover:text-red-600" : "";
+  const cursorEffect = hasImage ? "cursor-pointer" : "";
 
   return (
     <div
-      class={`group relative bg-white rounded-2xl ${padding} border border-gray-200 hover:border-red-500/20 hover:shadow-xl transition-all duration-300`}
+      class={`group relative bg-white rounded-2xl ${padding} ${border} ${shadow} ${cursorEffect}   
+     transition-all duration-300`}
     >
-      <div class="absolute inset-0 bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div
+        class={`absolute inset-0 ${hoverColor} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity`}
+      ></div>
 
       <div class="relative">
         <div
@@ -28,10 +49,6 @@ const Card = ({ icon, title, description, color, image }: CardData) => {
           {
             /* icon */
             Icon && <Icon size={24} class="text-white" />
-          }
-
-          {
-            // badge
           }
 
           {
@@ -51,8 +68,20 @@ const Card = ({ icon, title, description, color, image }: CardData) => {
           }
         </div>
 
-        <div class={`${hasImage ? "p-8" : ""}`}>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">{title}</h3>
+        <div class={`${hasImage ? "px-8 pb-8" : ""}`}>
+          {
+            // badge
+            category && (
+              <div class="inline-block px-3 py-1 bg-red-100 text-red-600 text-xs font-semibold rounded-full mb-3">
+                {category}
+              </div>
+            )
+          }
+          <h3
+            class={`text-2xl font-bold text-gray-900 mb-3 ${titleHoverColor} transition-all duration-300`}
+          >
+            {title}
+          </h3>
 
           <p class="text-gray-600 leading-relaxed">{description}</p>
         </div>
