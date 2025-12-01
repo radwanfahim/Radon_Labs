@@ -1,6 +1,6 @@
 const Portfolio = () => {
   return (
-    <section class=" py-24 open-sans bg-gray-50">
+    <section id="portfolio" class=" py-24 open-sans bg-gray-50">
       <div class="container  mx-auto custom-container">
         <h1 class="text-red-600 font-semibold text-sm uppercase tracking-wider roboto-slab text-center">
           Portfolio

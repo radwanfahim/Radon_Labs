@@ -13,6 +13,10 @@
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* custom container */
 .custom-container {
   max-width: var(--container-7xl);

@@ -26,7 +26,7 @@ const Header = () => {
             </h1>
 
             <p class="text-xl text-gray-300 mb-8 leading-relaxed w-3/4">
-              Turn clicks into customers. Radon Labs designs high-performing
+              Turn clicks into customers. Radon Lab designs high-performing
               websites and eCommerce solutions that engage users and boost your
               business.
             </p>
@@ -38,7 +38,14 @@ const Header = () => {
 
               {/* view work */}
               <a
-                href="#"
+                href="#portfolio"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("portfolio")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
                 class="inline-flex items-center justify-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full hover:bg-white/20 transition-all border border-white/20 "
               >
                 <span class="font-semibold">View Our Work</span>
