@@ -14,6 +14,7 @@ interface Service {
 }
 
 const Services = () => {
+  // ANCHOR services data
   const services: Service[] = [
     {
       icon: BsPaletteFill,
