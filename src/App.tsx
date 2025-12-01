@@ -5,12 +5,12 @@ import Nav from "./shared/Nav/Nav";
 
 function App() {
   return (
-    <>
+    <div class=" h-screen w-full">
       <Nav />
       <Router>
         <Route path="/" component={Home} />
       </Router>
-    </>
+    </div>
   );
 }
 
