@@ -3,7 +3,7 @@ import AppointmentButton from "../../ui/AppointmentButton";
 
 const Header = () => {
   return (
-    <section class="open-sans relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-red-950 to-gray-900">
+    <section class="open-sans relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-red-950 to-gray-900 ">
       {/* background */}
       <div
         class="object-cover absolute inset-0 opacity-10 bg-no-repeat "
@@ -14,7 +14,7 @@ const Header = () => {
 
       {/* container */}
 
-      <div class="container mx-auto relative">
+      <div class="container mx-auto custom-container relative">
         <div class="flex justify-between items-center min-h-screen">
           {/* left */}
           <div>
