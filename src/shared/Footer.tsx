@@ -47,7 +47,7 @@ const Footer = () => {
               <span class="text-2xl font-bold">Radon Lab</span>
             </div>
             <p class="text-gray-400 mb-6 leading-relaxed">
-              We are a creative web design agency specializing in building
+              We are a creative web developer agency specializing in building
               beautiful, functional websites that help businesses grow and
               succeed online.
             </p>
