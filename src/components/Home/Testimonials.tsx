@@ -16,6 +16,8 @@ const Testimonials = () => {
             have to say about working with us.
           </p>
         </div>
+
+        {/* card */}
       </div>
     </section>
   );
