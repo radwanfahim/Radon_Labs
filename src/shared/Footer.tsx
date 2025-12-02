@@ -24,7 +24,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: FaBrandsFacebook, href: "#" },
+  {
+    icon: FaBrandsFacebook,
+    href: "https://www.facebook.com/profile.php?id=61583982701185",
+  },
   { icon: AiOutlineTwitter, href: "#" },
   { icon: AiOutlineInstagram, href: "#" },
   { icon: FaBrandsLinkedinIn, href: "#" },
@@ -54,6 +57,7 @@ const Footer = () => {
                 return (
                   <a
                     href={social.href}
+                    target="_blank"
                     class="w-10 h-10 rounded-lg bg-white/10 hover:bg-red-600 flex items-center justify-center transition-all"
                   >
                     <Icon class="w-5 h-5" />
@@ -90,7 +94,11 @@ const Footer = () => {
             <div class="flex items-center gap-2 text-gray-400 text-sm">
               <BiLogosGmail class="w-4 h-4" />
               {/* email */}
-              <span>radonlabinfo@gmail.com</span>
+              <span>
+                <a href="mailto:radonlabinfo@gmail.com">
+                  radonlabinfo@gmail.com
+                </a>
+              </span>
             </div>
           </div>
         </div>
