@@ -5,6 +5,7 @@ interface Portfolios {
   image: string;
   color: string;
   icon: string;
+  number: string;
 }
 
 const PortfolioData: Portfolios[] = [
@@ -16,6 +17,7 @@ const PortfolioData: Portfolios[] = [
     description: "Modern online store with seamless checkout experience",
     color: "",
     icon: "",
+    number: "",
   },
   {
     title: "Corporate Website",
@@ -25,6 +27,7 @@ const PortfolioData: Portfolios[] = [
     description: "Professional corporate presence with brand identity",
     color: "",
     icon: "",
+    number: "",
   },
   {
     title: "Restaurant Portal",
@@ -34,6 +37,7 @@ const PortfolioData: Portfolios[] = [
     description: "Interactive menu and reservation system",
     color: "",
     icon: "",
+    number: "",
   },
   {
     title: "Tech Startup",
@@ -43,6 +47,7 @@ const PortfolioData: Portfolios[] = [
     description: "Innovative landing page with animations",
     color: "",
     icon: "",
+    number: "",
   },
   {
     title: "Fashion Brand",
@@ -52,6 +57,7 @@ const PortfolioData: Portfolios[] = [
     description: "Luxury online boutique experience",
     color: "",
     icon: "",
+    number: "",
   },
   {
     title: "Digital Agency",
@@ -61,6 +67,7 @@ const PortfolioData: Portfolios[] = [
     description: "Creative portfolio showcase",
     color: "",
     icon: "",
+    number: "",
   },
 ];
 

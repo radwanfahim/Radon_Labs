@@ -5,6 +5,7 @@ interface CardData {
   color: string;
   image: string;
   category: string;
+  number: string;
 }
 
 const Card = ({
@@ -14,9 +15,11 @@ const Card = ({
   color,
   image,
   category,
+  number,
 }: CardData) => {
   const Icon = icon;
   const hasImage = Boolean(image);
+  const hasNumber = Boolean(number);
   const padding = hasImage ? "p-0" : "p-8";
   const widthHeight = hasImage ? "" : "w-14 h-14";
   const scaleEffect = hasImage
@@ -43,12 +46,26 @@ const Card = ({
       ></div>
 
       <div class="relative">
+        {
+          /* number */
+          hasNumber && (
+            <div class="absolute -top-14 -right-12 w-16 h-16 bg-gradient-to-br from-red-600 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+              {number}
+            </div>
+          )
+        }
+
         <div
-          class={`${widthHeight} rounded-xl bg-gradient-to-br flex items-center justify-center mb-6 ${scaleEffect} ${color}`}
+          class={`${widthHeight} rounded-xl bg-gradient-to-br flex items-center justify-center mb-6 ${scaleEffect}  ${color}`}
         >
           {
             /* icon */
-            Icon && <Icon size={24} class="text-white" />
+            Icon && (
+              <Icon
+                size={24}
+                class={` ${hasNumber ? "text-red-600" : "text-white"}`}
+              />
+            )
           }
 
           {

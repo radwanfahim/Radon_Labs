@@ -11,6 +11,7 @@ interface Service {
   color: string;
   image: string;
   category: string;
+  number: string;
 }
 
 const ServiceData: Service[] = [
@@ -22,6 +23,7 @@ const ServiceData: Service[] = [
     color: "from-red-500 to-orange-500",
     image: "",
     category: "",
+    number: "",
   },
   {
     icon: AiOutlineCode,
@@ -31,6 +33,7 @@ const ServiceData: Service[] = [
     color: "from-orange-500 to-amber-500",
     image: "",
     category: "",
+    number: "",
   },
   {
     icon: BsPhone,
@@ -40,6 +43,7 @@ const ServiceData: Service[] = [
     color: "from-red-600 to-red-500",
     image: "",
     category: "",
+    number: "",
   },
   {
     icon: RiFinanceShoppingCart2Fill,
@@ -49,6 +53,7 @@ const ServiceData: Service[] = [
     color: "from-amber-500 to-yellow-500",
     image: "",
     category: "",
+    number: "",
   },
   {
     icon: FiSearch,
@@ -58,6 +63,7 @@ const ServiceData: Service[] = [
     color: "from-red-500 to-pink-500",
     image: "",
     category: "",
+    number: "",
   },
   {
     icon: BiSolidZap,
@@ -67,6 +73,7 @@ const ServiceData: Service[] = [
     color: "from-orange-600 to-red-600",
     image: "",
     category: "",
+    number: "",
   },
 ];
 

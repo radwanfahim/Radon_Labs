@@ -1,5 +1,6 @@
 import Header from "../Header/Header";
 import Portfolio from "./Portfolio";
+import Process from "./Process";
 import Services from "./Services";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <Header />
       <Services />
       <Portfolio />
+      <Process />
     </>
   );
 };
