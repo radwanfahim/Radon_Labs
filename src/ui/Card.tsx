@@ -103,6 +103,11 @@ const Card = ({
           <p class="text-gray-600 leading-relaxed">{description}</p>
         </div>
       </div>
+
+      {/* steps dash */}
+      {hasNumber && parseInt(number) < 4 && (
+        <div class="hidden lg:block absolute top-1/2 -right-6 w-8 h-0.5 bg-gradient-to-r from-red-300 to-orange-300 z-10"></div>
+      )}
     </div>
   );
 };
