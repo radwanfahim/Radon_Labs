@@ -1,5 +1,5 @@
 import { AiOutlineRocket } from "solid-icons/ai";
-import { FaRegularLightbulb, FaSolidPencil } from "solid-icons/fa";
+import { FaRegularChessKing, FaRegularLightbulb } from "solid-icons/fa";
 import { OcCode2 } from "solid-icons/oc";
 
 interface Process {
@@ -24,10 +24,10 @@ const ProcessData: Process[] = [
     image: "",
   },
   {
-    icon: FaSolidPencil,
-    title: "Design",
+    icon: FaRegularChessKing,
+    title: "Strategy",
     description:
-      "Our creative team crafts stunning designs that align with your brand vision.",
+      "We develop a comprehensive roadmap that transforms your vision into actionable plans.",
     number: "02",
     color: "bg-gradient-to-br from-red-50 to-orange-50",
     category: "",
