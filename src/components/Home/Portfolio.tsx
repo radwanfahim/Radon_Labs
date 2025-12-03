@@ -4,18 +4,18 @@ import PortfolioData from "../../api/PortfolioData";
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" class=" py-24 open-sans bg-gray-50">
+    <section id="portfolio" class=" py-24 open-sans bg-gray-50 lg:px-0 px-3">
       <div class="container  mx-auto custom-container">
         <h1 class="text-red-600 font-semibold text-sm uppercase tracking-wider roboto-slab text-center">
           Portfolio
         </h1>
 
         <div>
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6 text-center">
+          <h1 class="lg:text-4xl text-3xl font-bold text-gray-900 mt-4 lg:mb-6 mb-4 text-center">
             Our Latest Work
           </h1>
 
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto text-center">
+          <p class="lg:text-xl text-gray-600 max-w-3xl mx-auto text-center">
             Explore our portfolio of successful projects that showcase our
             expertise and creativity.
           </p>

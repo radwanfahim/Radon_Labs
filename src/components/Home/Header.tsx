@@ -3,7 +3,7 @@ import AppointmentButton from "../../ui/AppointmentButton";
 
 const Header = () => {
   return (
-    <section class="open-sans relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-red-950 to-gray-900 ">
+    <section class="open-sans relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-red-950 to-gray-900 lg:px-0 px-3">
       {/* background */}
       <div
         class="object-cover absolute inset-0 opacity-10 bg-no-repeat "
@@ -17,7 +17,7 @@ const Header = () => {
       <div class="container mx-auto custom-container relative">
         <div class="flex justify-between items-center min-h-screen">
           {/* left */}
-          <div>
+          <div class="lg:text-start text-center">
             <h1 class="roboto-slab text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight capitalize">
               Driving growth through
               <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
@@ -25,14 +25,14 @@ const Header = () => {
               </span>
             </h1>
 
-            <p class="text-xl text-gray-300 mb-8 leading-relaxed w-3/4">
+            <p class="lg:text-xl text-gray-300 mb-8 leading-relaxed lg:w-3/4">
               Turn clicks into customers. Radon Lab designs high-performing
               websites and eCommerce solutions that engage users and boost your
               business.
             </p>
 
             {/* buttons */}
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 lg:flex-row flex-col justify-center lg:justify-start">
               {/* appointments */}
               <AppointmentButton />
 
@@ -54,7 +54,7 @@ const Header = () => {
           </div>
 
           {/* right */}
-          <div class="w-[60%]">
+          <div class="lg:w-[60%]">
             <div class="relative hidden lg:block">
               <div class="relative">
                 <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-600 rounded-3xl blur-3xl opacity-20"></div>

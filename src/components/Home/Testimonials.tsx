@@ -1,3 +1,7 @@
+import { For } from "solid-js";
+import TestimonialsData from "../../api/TestimonialsData";
+import Card from "../../ui/Card";
+
 const Testimonials = () => {
   return (
     <section class="py-24 open-sans bg-gradient-to-br from-gray-900 via-red-950 to-gray-900">
@@ -18,6 +22,13 @@ const Testimonials = () => {
         </div>
 
         {/* card */}
+        {
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            <For each={TestimonialsData}>
+              {(testimonial) => <Card {...testimonial} />}
+            </For>
+          </div>
+        }
       </div>
     </section>
   );

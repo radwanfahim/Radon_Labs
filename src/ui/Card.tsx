@@ -6,6 +6,9 @@ interface CardData {
   image: string;
   category: string;
   number: string;
+  name: string;
+  role: string;
+  rating: number;
 }
 
 const Card = ({
@@ -16,10 +19,14 @@ const Card = ({
   image,
   category,
   number,
+  name,
+  role,
+  rating,
 }: CardData) => {
   const Icon = icon;
   const hasImage = Boolean(image);
   const hasNumber = Boolean(number);
+  const hasRating = Boolean(rating);
   const padding = hasImage ? "p-0" : "p-8";
   const widthHeight = hasImage ? "" : "w-14 h-14";
   const scaleEffect = hasImage
@@ -49,7 +56,7 @@ const Card = ({
         {
           /* number */
           hasNumber && (
-            <div class="absolute -top-14 -right-12 w-16 h-16 bg-gradient-to-br from-red-600 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+            <div class="absolute lg:-top-[45%] -top-[45%] lg:-right-[13%] right-[50%] transform translate-1/2 w-16 h-16 bg-gradient-to-br from-red-600 to-orange-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
               {number}
             </div>
           )
@@ -75,17 +82,17 @@ const Card = ({
                 <img
                   src={image}
                   alt={title}
-                  class={`w-screen h-full object-cover ${
+                  class={`w-screen h-full object-cover rounded-t-xl ${
                     hasImage ? "group-hover:scale-110 transition-transform" : ""
                   } duration-500`}
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                <div class="absolute rounded-t-xl inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
               </div>
             )
           }
         </div>
 
-        <div class={`${hasImage ? "px-8 pb-8" : ""}`}>
+        <div class={`${hasImage ? "lg:px-8 lg:pb-8 px-4 pb-6" : ""}`}>
           {
             // badge
             category && (

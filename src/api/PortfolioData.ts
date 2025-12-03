@@ -6,6 +6,9 @@ interface Portfolios {
   color: string;
   icon: string;
   number: string;
+  name: string;
+  role: string;
+  rating: any;
 }
 
 const PortfolioData: Portfolios[] = [
@@ -18,6 +21,9 @@ const PortfolioData: Portfolios[] = [
     color: "",
     icon: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     title: "Corporate Website",
@@ -28,6 +34,9 @@ const PortfolioData: Portfolios[] = [
     color: "",
     icon: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     title: "Restaurant Portal",
@@ -38,6 +47,9 @@ const PortfolioData: Portfolios[] = [
     color: "",
     icon: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     title: "Tech Startup",
@@ -48,6 +60,9 @@ const PortfolioData: Portfolios[] = [
     color: "",
     icon: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     title: "Fashion Brand",
@@ -58,6 +73,9 @@ const PortfolioData: Portfolios[] = [
     color: "",
     icon: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     title: "Digital Agency",
@@ -68,6 +86,9 @@ const PortfolioData: Portfolios[] = [
     color: "",
     icon: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
 ];
 

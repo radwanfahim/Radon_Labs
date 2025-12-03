@@ -10,6 +10,9 @@ interface Process {
   image: string;
   category: string;
   number: string;
+  name: string;
+  role: string;
+  rating: any;
 }
 
 const ProcessData: Process[] = [
@@ -22,6 +25,9 @@ const ProcessData: Process[] = [
     color: "bg-gradient-to-br from-red-50 to-orange-50",
     category: "",
     image: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     icon: FaRegularChessKing,
@@ -32,6 +38,9 @@ const ProcessData: Process[] = [
     color: "bg-gradient-to-br from-red-50 to-orange-50",
     category: "",
     image: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     icon: OcCode2,
@@ -42,6 +51,9 @@ const ProcessData: Process[] = [
     color: "bg-gradient-to-br from-red-50 to-orange-50",
     category: "",
     image: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     icon: AiOutlineRocket,
@@ -52,6 +64,9 @@ const ProcessData: Process[] = [
     color: "bg-gradient-to-br from-red-50 to-orange-50",
     category: "",
     image: "",
+    name: "",
+    role: "",
+    rating: "",
   },
 ];
 

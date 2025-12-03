@@ -12,6 +12,9 @@ interface Service {
   image: string;
   category: string;
   number: string;
+  name: string;
+  role: string;
+  rating: any;
 }
 
 const ServiceData: Service[] = [
@@ -24,6 +27,9 @@ const ServiceData: Service[] = [
     image: "",
     category: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     icon: AiOutlineCode,
@@ -34,6 +40,9 @@ const ServiceData: Service[] = [
     image: "",
     category: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     icon: BsPhone,
@@ -44,6 +53,9 @@ const ServiceData: Service[] = [
     image: "",
     category: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     icon: RiFinanceShoppingCart2Fill,
@@ -54,6 +66,9 @@ const ServiceData: Service[] = [
     image: "",
     category: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     icon: FiSearch,
@@ -64,6 +79,9 @@ const ServiceData: Service[] = [
     image: "",
     category: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
   {
     icon: BiSolidZap,
@@ -74,6 +92,9 @@ const ServiceData: Service[] = [
     image: "",
     category: "",
     number: "",
+    name: "",
+    role: "",
+    rating: "",
   },
 ];
 
