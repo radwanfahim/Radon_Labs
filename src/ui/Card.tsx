@@ -62,9 +62,9 @@ const Card = ({
         }
 
         <div
-          class={`${hasIcon ? "w-14 h-14" : ""} ${
-            hasImage ? "" : "group-hover:scale-110 transition-transform"
-          }  ${color} rounded-xl bg-gradient-to-br flex items-center justify-center mb-6`}
+          class={`${hasIcon ? "w-14 h-14 mb-6" : ""} ${
+            hasImage ? "mb-6" : "group-hover:scale-110 transition-transform "
+          }  ${color} rounded-xl bg-gradient-to-br flex items-center justify-center `}
         >
           {
             /* icon */
