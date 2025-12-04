@@ -1,3 +1,4 @@
+import Contact from "./Contact/Contact";
 import Header from "./Header";
 import Portfolio from "./Portfolio";
 import Process from "./Process";
@@ -12,6 +13,7 @@ const Home = () => {
       <Portfolio />
       <Process />
       <Testimonials />
+      <Contact />
     </>
   );
 };
