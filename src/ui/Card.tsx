@@ -8,7 +8,7 @@ interface CardData {
   number: string;
   name: string;
   role: string;
-  rating: number;
+  rating: any;
 }
 
 const Card = ({
