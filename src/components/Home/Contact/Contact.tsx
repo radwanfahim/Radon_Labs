@@ -1,3 +1,6 @@
+import Form from "./Form";
+import Info from "./Info";
+
 const Contact = () => {
   return (
     <section class="py-24 open-sans bg-white">
@@ -15,6 +18,14 @@ const Contact = () => {
             Ready to bring your vision to life? Get in touch with us today and
             let's create something amazing together.
           </p>
+        </div>
+
+        <div class="mt-10 ">
+          {/* get ing touch */}
+          <Info />
+
+          {/* form */}
+          <Form />
         </div>
       </div>
     </section>
