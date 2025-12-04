@@ -1,3 +1,6 @@
+import { AiFillStar } from "solid-icons/ai";
+import { FaSolidQuoteRight } from "solid-icons/fa";
+
 interface CardData {
   icon: any;
   title: string;
@@ -24,32 +27,28 @@ const Card = ({
   rating,
 }: CardData) => {
   const Icon = icon;
+  const hasIcon = Boolean(Icon);
   const hasImage = Boolean(image);
   const hasNumber = Boolean(number);
   const hasRating = Boolean(rating);
-  const padding = hasImage ? "p-0" : "p-8";
-  const widthHeight = hasImage ? "" : "w-14 h-14";
-  const scaleEffect = hasImage
-    ? ""
-    : "group-hover:scale-110 transition-transform";
-  const hoverColor = hasImage
-    ? ""
-    : "bg-gradient-to-br from-red-50 to-orange-50";
-  const border = hasImage
-    ? ""
-    : "border border-gray-200 hover:border-red-500/20";
-
-  const shadow = hasImage ? "shadow-lg hover:shadow-2xl" : "hover:shadow-xl";
-  const titleHoverColor = hasImage ? "group-hover:text-red-600" : "";
-  const cursorEffect = hasImage ? "cursor-pointer" : "";
 
   return (
     <div
-      class={`group relative bg-white rounded-2xl ${padding} ${border} ${shadow} ${cursorEffect}   
-     transition-all duration-300`}
+      class={`group relative bg-white ${
+        hasRating
+          ? "bg-white/5 backdrop-blur-sm border-white/10  hover:border-red-500/30 "
+          : ""
+      } rounded-2xl 
+      ${
+        hasImage
+          ? "shadow-lg hover:shadow-2xl cursor-pointer p-0"
+          : "border border-gray-200 hover:border-red-500/20 hover:shadow-xl p-8"
+      }  transition-all duration-300`}
     >
       <div
-        class={`absolute inset-0 ${hoverColor} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity`}
+        class={`absolute inset-0 ${
+          hasIcon ? "bg-gradient-to-br from-red-50 to-orange-50" : ""
+        }  rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity`}
       ></div>
 
       <div class="relative">
@@ -63,7 +62,9 @@ const Card = ({
         }
 
         <div
-          class={`${widthHeight} rounded-xl bg-gradient-to-br flex items-center justify-center mb-6 ${scaleEffect}  ${color}`}
+          class={`${hasIcon ? "w-14 h-14" : ""} ${
+            hasImage ? "" : "group-hover:scale-110 transition-transform"
+          }  ${color} rounded-xl bg-gradient-to-br flex items-center justify-center mb-6`}
         >
           {
             /* icon */
@@ -92,6 +93,22 @@ const Card = ({
           }
         </div>
 
+        {
+          // rating icon Quote
+          hasRating && (
+            <FaSolidQuoteRight class="w-10 h-10 text-red-500/30 mb-6" />
+          )
+        }
+
+        {/* rating star */}
+        {hasRating && (
+          <div class="flex items-center mb-4 text-yellow-400">
+            {Array.from({ length: rating }).map(() => (
+              <AiFillStar class="w-5 h-5" />
+            ))}
+          </div>
+        )}
+
         <div class={`${hasImage ? "lg:px-8 lg:pb-8 px-4 pb-6" : ""}`}>
           {
             // badge
@@ -102,13 +119,29 @@ const Card = ({
             )
           }
           <h3
-            class={`text-2xl font-bold text-gray-900 mb-3 ${titleHoverColor} transition-all duration-300`}
+            class={`text-2xl font-bold text-gray-900 mb-3 ${
+              hasImage ? "group-hover:text-red-600" : ""
+            } transition-all duration-300`}
           >
             {title}
           </h3>
 
-          <p class="text-gray-600 leading-relaxed">{description}</p>
+          <p
+            class={`${
+              hasRating ? "text-gray-300" : "text-gray-600"
+            }  leading-relaxed`}
+          >
+            {description}
+          </p>
         </div>
+
+        {/* Testimonials name and  role */}
+        {hasRating && (
+          <div class="mt-4">
+            <h1 class="font-semibold text-white">{name}</h1>
+            <h1 class="text-sm text-gray-400">{role}</h1>
+          </div>
+        )}
       </div>
 
       {/* steps dash */}
