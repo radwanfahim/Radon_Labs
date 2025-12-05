@@ -3,7 +3,7 @@ import Info from "./Info";
 
 const Contact = () => {
   return (
-    <section class="py-24 open-sans bg-white">
+    <section id="contact" class="py-24 open-sans bg-white">
       <div class="container  mx-auto custom-container lg:px-0 px-3">
         <h1 class="text-red-600 font-semibold text-sm uppercase tracking-wider roboto-slab text-center">
           Contact Us

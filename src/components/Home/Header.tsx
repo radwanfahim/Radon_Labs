@@ -1,8 +1,33 @@
-import { FaSolidBriefcase } from "solid-icons/fa";
+import { FaSolidArrowRight, FaSolidBriefcase } from "solid-icons/fa";
 import headerPattern from "../../assets/header-pattern.png";
-import AppointmentButton from "../../ui/AppointmentButton";
+import { For } from "solid-js";
+import ButtonUi from "../../ui/ButtonUi";
+
+interface Button {
+  link: string;
+  text: string;
+  color?: string;
+  icon?: any;
+  name?: string;
+}
 
 const Header = () => {
+  const buttonData: Button[] = [
+    {
+      link: "#contact",
+      name: "contact",
+      text: "Start Your Project",
+      color: "bg-red-600 hover:bg-red-700 border-red-600",
+      icon: FaSolidArrowRight,
+    },
+    {
+      link: "#portfolio",
+      name: "portfolio",
+      text: "View Our Work",
+      color: "bg-white/10 backdrop-blur-sm hover:bg-white/20 border-white/20",
+      icon: FaSolidBriefcase,
+    },
+  ];
   return (
     <section class="open-sans relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-red-950 to-gray-900 lg:px-0 px-3">
       {/* background */}
@@ -34,26 +59,9 @@ const Header = () => {
 
             {/* buttons */}
             <div class="flex items-center gap-3 lg:flex-row flex-col justify-center lg:justify-start">
-              {/* appointments */}
-              <AppointmentButton />
-
-              {/* view work */}
-              <a
-                href="#portfolio"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("portfolio")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }}
-                class="inline-flex items-center justify-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full hover:bg-white/20 transition-all border border-white/20 "
-              >
-                <span class="font-semibold">View Our Work</span>
-                <span>
-                  <FaSolidBriefcase class="w-5 h-5" />
-                </span>
-              </a>
+              <For each={buttonData}>
+                {(button) => <ButtonUi {...button} />}
+              </For>
             </div>
           </div>
 
