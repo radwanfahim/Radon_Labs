@@ -18,7 +18,7 @@ const Form = () => {
 
     const formData = new FormData(e.target);
 
-    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_API_KEY);
+    formData.append("access_key", "4ab2e000-c22c-48ab-9e15-173c876a8195");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
