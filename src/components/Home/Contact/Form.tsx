@@ -1,16 +1,76 @@
-import { For } from "solid-js";
+import { createSignal, For } from "solid-js";
 import ServiceData from "../../../api/ServiceData";
+import { BsSendFill } from "solid-icons/bs";
+import { AiFillCheckCircle } from "solid-icons/ai";
 
 const Form = () => {
+  const [formData, setFormData] = createSignal({
+    name: "",
+    email: "",
+    service: "",
+    details: "",
+  });
+
+  const [success, setSuccess] = createSignal(false);
+  const [error, setError] = createSignal(false);
+
+  // NOTE this filterout the performance adn that with others
+  const interestedServices = [
+    ...ServiceData.filter((service) => service.title !== "Performance"),
+    { title: "Others" },
+  ];
+
+  // form data handler
+  const handleFormData = (e: any) => {
+    e.preventDefault();
+
+    const name = formData().name;
+    const email = formData().email;
+    const service = formData().service;
+    const details = formData().details;
+
+    const data = {
+      name,
+      email,
+      service,
+      details,
+    };
+
+    if (!data) {
+      setSuccess(false);
+      setError(true);
+      return;
+    } else {
+      setSuccess(true);
+      setError(false);
+      e.target.reset();
+    }
+
+    console.log(data);
+  };
+
   return (
     <div class="">
-      <form>
+      {
+        /* error */
+        error() && (
+          <div>
+            <h1 class="text-red-600">{error()}</h1>
+          </div>
+        )
+      }
+      <form onSubmit={handleFormData}>
         {/* name */}
         <fieldset class="fieldset ">
           <legend class="fieldset-legend font-bold text-md">Your Name</legend>
           <input
+            value={formData().name}
+            onInput={(e) =>
+              setFormData({ ...formData(), name: e.target.value })
+            }
+            name="name"
             type="text"
-            class="input w-full rounded-md"
+            class="input w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all"
             placeholder="User Name"
             required
           />
@@ -21,8 +81,13 @@ const Form = () => {
             Email Address
           </legend>
           <input
+            value={formData().email}
+            onInput={(e) =>
+              setFormData({ ...formData(), email: e.target.value })
+            }
+            name="email"
             type="email"
-            class="input w-full rounded-md"
+            class="input w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all"
             placeholder="user@mail.com"
             required
           />
@@ -32,18 +97,66 @@ const Form = () => {
             <legend class="fieldset-legend font-bold text-md">
               Service Interested In
             </legend>
-            <select class="select w-full">
+            <select
+              class="select px-4 py-3 rounded-xl border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all w-full"
+              required
+              value={formData().service}
+              onInput={(e) =>
+                setFormData({ ...formData(), service: e.target.value })
+              }
+            >
               <option disabled selected>
                 Select a Service
               </option>
 
-              <For each={ServiceData}>
+              <For each={interestedServices}>
                 {(service) => {
-                  return <option>{service?.title}</option>;
+                  const data = service.title;
+                  const lowerCase = data.toLowerCase();
+
+                  const joinValue = lowerCase.split(" ").join("-");
+
+                  return <option value={joinValue}>{service?.title}</option>;
                 }}
               </For>
             </select>
           </div>
+
+          {/* Project Details */}
+          <legend class="fieldset-legend font-bold text-md">
+            Project Details
+          </legend>
+
+          <textarea
+            rows={6}
+            class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all resize-none"
+            placeholder="Tell us about your project... What type of website do you need? What features are important to you? Share your vision with us."
+            required
+            value={formData().details}
+            onInput={(e) =>
+              setFormData({ ...formData(), details: e.target.value })
+            }
+          />
+
+          {/* submit */}
+
+          {success() ? (
+            <button
+              class="w-full bg-green-600 text-white px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group mt-4"
+              disabled
+            >
+              <span class="font-semibold text-[16px]">Message Send</span>
+              <AiFillCheckCircle class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+          ) : (
+            <button
+              type="submit"
+              class="w-full bg-red-600 text-white px-8 py-4 rounded-xl hover:bg-red-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group cursor-pointer mt-4"
+            >
+              <span class="font-semibold text-[16px]">Send Message</span>
+              <BsSendFill class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+          )}
         </fieldset>
       </form>
     </div>
