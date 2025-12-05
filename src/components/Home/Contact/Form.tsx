@@ -4,70 +4,43 @@ import { BsSendFill } from "solid-icons/bs";
 import { AiFillCheckCircle } from "solid-icons/ai";
 
 const Form = () => {
-  const [formData, setFormData] = createSignal({
-    name: "",
-    email: "",
-    service: "",
-    details: "",
-  });
-
   const [success, setSuccess] = createSignal(false);
-  const [error, setError] = createSignal(false);
 
-  // NOTE this filterout the performance adn that with others
+  // NOTE this filterout the performance and add others
   const interestedServices = [
     ...ServiceData.filter((service) => service.title !== "Performance"),
     { title: "Others" },
   ];
 
   // form data handler
-  const handleFormData = (e: any) => {
+  const handleFormData = async (e: any) => {
     e.preventDefault();
 
-    const name = formData().name;
-    const email = formData().email;
-    const service = formData().service;
-    const details = formData().details;
+    const formData = new FormData(e.target);
 
-    const data = {
-      name,
-      email,
-      service,
-      details,
-    };
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_API_KEY);
 
-    if (!data) {
-      setSuccess(false);
-      setError(true);
-      return;
-    } else {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    if (data.success) {
       setSuccess(true);
-      setError(false);
       e.target.reset();
+    } else {
+      setSuccess(false);
     }
-
-    console.log(data);
   };
 
   return (
     <div class="">
-      {
-        /* error */
-        error() && (
-          <div>
-            <h1 class="text-red-600">{error()}</h1>
-          </div>
-        )
-      }
       <form onSubmit={handleFormData}>
         {/* name */}
         <fieldset class="fieldset ">
           <legend class="fieldset-legend font-bold text-md">Your Name</legend>
           <input
-            value={formData().name}
-            onInput={(e) =>
-              setFormData({ ...formData(), name: e.target.value })
-            }
             name="name"
             type="text"
             class="input w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all"
@@ -81,10 +54,6 @@ const Form = () => {
             Email Address
           </legend>
           <input
-            value={formData().email}
-            onInput={(e) =>
-              setFormData({ ...formData(), email: e.target.value })
-            }
             name="email"
             type="email"
             class="input w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all"
@@ -100,10 +69,6 @@ const Form = () => {
             <select
               class="select px-4 py-3 rounded-xl border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all w-full"
               required
-              value={formData().service}
-              onInput={(e) =>
-                setFormData({ ...formData(), service: e.target.value })
-              }
             >
               <option disabled selected>
                 Select a Service
@@ -132,17 +97,12 @@ const Form = () => {
             class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all resize-none"
             placeholder="Tell us about your project... What type of website do you need? What features are important to you? Share your vision with us."
             required
-            value={formData().details}
-            onInput={(e) =>
-              setFormData({ ...formData(), details: e.target.value })
-            }
           />
 
           {/* submit */}
-
           {success() ? (
             <button
-              class="w-full bg-green-600 text-white px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group mt-4"
+              class="w-full bg-green-600 text-white px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group cursor-pointer mt-4"
               disabled
             >
               <span class="font-semibold text-[16px]">Message Send</span>
