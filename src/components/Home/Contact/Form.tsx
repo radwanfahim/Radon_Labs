@@ -69,6 +69,7 @@ const Form = () => {
             <select
               class="select px-4 py-3 rounded-xl border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all w-full"
               required
+              name="service"
             >
               <option disabled selected>
                 Select a Service
@@ -97,6 +98,7 @@ const Form = () => {
             class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all resize-none"
             placeholder="Tell us about your project... What type of website do you need? What features are important to you? Share your vision with us."
             required
+            name="details"
           />
 
           {/* submit */}
