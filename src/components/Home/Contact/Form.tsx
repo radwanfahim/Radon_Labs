@@ -18,7 +18,17 @@ const Form = () => {
 
     const formData = new FormData(e.target);
 
-    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_API_KEY);
+    const apiKey = import.meta.env.VITE_WEB3FORMS_API_KEY;
+
+    if (!apiKey) {
+      console.error("API key is missing!");
+      setSuccess(false);
+      return;
+    }
+
+    formData.append("access_key", apiKey);
+
+    console.log("API Key exists:", !!import.meta.env.VITE_WEB3FORMS_API_KEY);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
