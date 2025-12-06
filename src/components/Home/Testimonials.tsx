@@ -4,7 +4,10 @@ import Card from "../../ui/Card";
 
 const Testimonials = () => {
   return (
-    <section class="py-24 open-sans bg-gradient-to-br from-gray-900 via-red-950 to-gray-900">
+    <section
+      id="testimonials"
+      class="py-24 open-sans bg-gradient-to-br from-gray-900 via-red-950 to-gray-900"
+    >
       <div class="container  mx-auto custom-container lg:px-0 px-3">
         <h1 class="text-red-600 font-semibold text-sm uppercase tracking-wider roboto-slab text-center">
           Testimonials

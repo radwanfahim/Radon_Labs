@@ -4,7 +4,10 @@ import ServiceData from "../../api/ServiceData";
 
 const Services = () => {
   return (
-    <section class="container  mx-auto custom-container py-24 open-sans lg:px-0 px-3">
+    <section
+      id="services"
+      class="container  mx-auto custom-container py-24 open-sans lg:px-0 px-3"
+    >
       <h1 class="text-red-600 font-semibold text-sm uppercase tracking-wider roboto-slab text-center ">
         Our Services
       </h1>

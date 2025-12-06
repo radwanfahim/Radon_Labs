@@ -4,7 +4,7 @@ import Card from "../../ui/Card";
 
 const Process = () => {
   return (
-    <section class="py-24 open-sans bg-[#FFF9F9] lg:px-0 px-3">
+    <section id="process" class="py-24 open-sans bg-[#FFF9F9] lg:px-0 px-3">
       <div class="container  mx-auto custom-container">
         <h1 class="text-red-600 font-semibold text-sm uppercase tracking-wider roboto-slab text-center">
           Our Process
