@@ -1,12 +1,14 @@
 import { createEffect, createSignal, For } from "solid-js";
 import logo from "/Logo.png";
+import Mobile from "./Mobile";
 
 const Desktop = () => {
   const [isScrolled, setIsScrolled] = createSignal(false);
+  const [isOpen, setIsOpen] = createSignal(false);
 
   createEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -27,10 +29,14 @@ const Desktop = () => {
         isScrolled() ? "bg-white shadow-lg pb-4" : "bg-transparent "
       }`}
     >
-      <div class="container mx-auto custom-container flex items-center justify-between pt-4">
+      <div class="container mx-auto custom-container flex items-center justify-between pt-4 relative">
         <a href="/" class="flex gap-2 font-bold text-xl items-center">
           <img width={40} height={40} src={logo} alt="logo" />
-          <h1 class={`${isScrolled() ? "text-red-600" : "text-white"}`}>
+          <h1
+            class={`${
+              isScrolled() || isOpen() ? "text-red-600" : "text-white"
+            }`}
+          >
             Radon Lab
           </h1>
         </a>
@@ -38,7 +44,7 @@ const Desktop = () => {
         <ul
           class={`${
             isScrolled() ? "text-gray-900" : "text-white"
-          } flex gap-5 items-center justify-center font-semibold`}
+          } lg:flex hidden gap-5 items-center justify-center font-semibold`}
         >
           <For each={navLinks}>
             {(link) => (
@@ -48,6 +54,14 @@ const Desktop = () => {
             )}
           </For>
         </ul>
+
+        {/* mobile */}
+        <Mobile
+          isScrolled={isScrolled}
+          navLinks={navLinks}
+          setIsOpen={setIsOpen}
+          isOpen={isOpen}
+        />
       </div>
     </nav>
   );
