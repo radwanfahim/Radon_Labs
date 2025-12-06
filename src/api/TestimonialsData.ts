@@ -10,14 +10,15 @@ interface Testimonial {
   category: string;
   number: string;
   image: string;
+  link: string;
 }
 
 // NOTE use image if needed also remove the empty image string
 
 const TestimonialsData: Testimonial[] = [
   {
-    name: "Sarah Johnson",
-    role: "CEO, TechStart Inc.",
+    name: "Thomas Harrington",
+    role: "CEO, Royal Mint Properties",
     // image:
     // "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200",
     description:
@@ -28,11 +29,12 @@ const TestimonialsData: Testimonial[] = [
     color: "",
     category: "",
     number: "",
+    link: "",
     image: "",
   },
   {
-    name: "Michael Chen",
-    role: "Founder, GreenLeaf Co.",
+    name: "Khalid Alrajhi",
+    role: "Founder, Mateen AlManasik",
     // image:
     // "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=200",
     description:
@@ -43,21 +45,23 @@ const TestimonialsData: Testimonial[] = [
     color: "",
     category: "",
     number: "",
+    link: "",
     image: "",
   },
   {
-    name: "Emily Rodriguez",
-    role: "Marketing Director, StyleHub",
+    name: "Ahmed Abbas Sindi",
+    role: "CEO, ITHRAA ALKHAIR",
     // image:
     // "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=200",
     description:
-      "Professional, responsive, and incredibly talented. Our new e-commerce site has boosted sales by 150% in just three months.",
+      "Professional, responsive, and incredibly talented. Our hajj booking website has seen a significant improvement in performance.",
     rating: 5,
     icon: "",
     title: "",
     color: "",
     category: "",
     number: "",
+    link: "",
     image: "",
   },
 ];

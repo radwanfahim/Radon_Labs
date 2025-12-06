@@ -15,6 +15,7 @@ interface Service {
   name: string;
   role: string;
   rating: any;
+  link: string;
 }
 
 const ServiceData: Service[] = [
@@ -30,6 +31,7 @@ const ServiceData: Service[] = [
     name: "",
     role: "",
     rating: "",
+    link: "",
   },
   {
     icon: AiOutlineCode,
@@ -43,6 +45,7 @@ const ServiceData: Service[] = [
     name: "",
     role: "",
     rating: "",
+    link: "",
   },
   {
     icon: BsPhone,
@@ -56,6 +59,7 @@ const ServiceData: Service[] = [
     name: "",
     role: "",
     rating: "",
+    link: "",
   },
   {
     icon: RiFinanceShoppingCart2Fill,
@@ -69,6 +73,7 @@ const ServiceData: Service[] = [
     name: "",
     role: "",
     rating: "",
+    link: "",
   },
   {
     icon: FiSearch,
@@ -82,6 +87,7 @@ const ServiceData: Service[] = [
     name: "",
     role: "",
     rating: "",
+    link: "",
   },
   {
     icon: BiSolidZap,
@@ -95,6 +101,7 @@ const ServiceData: Service[] = [
     name: "",
     role: "",
     rating: "",
+    link: "",
   },
 ];
 

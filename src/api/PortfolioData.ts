@@ -9,15 +9,17 @@ interface Portfolios {
   name: string;
   role: string;
   rating: any;
+  link: string;
 }
 
 const PortfolioData: Portfolios[] = [
   {
-    title: "E-Commerce Platform",
+    title: "Mateen AlManasik",
     category: "Web Development",
-    image:
-      "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Modern online store with seamless checkout experience",
+    image: "/Mateen-AlManasik.png",
+    description:
+      "Mateen MS appears to be a dedicated platform for pilgrims, specifically catering to those planning Hajj and Umrah journeys. The website offers a suite of customized travel packages, ranging from Basic to Premium and Luxury options, each designed to meet varying needs and budgets. These packages typically include government fees, flights, accommodation in key cities, visits to sacred sites, and internal transportation.",
+    link: "https://mateen-ms.com/",
     color: "",
     icon: "",
     number: "",
@@ -26,11 +28,12 @@ const PortfolioData: Portfolios[] = [
     rating: "",
   },
   {
-    title: "Corporate Website",
+    title: "ITHRAA ALKHAIR",
     category: "Web Design",
-    image:
-      "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Professional corporate presence with brand identity",
+    image: "/ITHRAA-ALKHAIR.png",
+    description:
+      "Ithraa Alkhair is a leading pilgrimage service provider specializing in Hajj services for non-Arab African pilgrims. Established as a restricted institution in 1404 AH, it has evolved into a closed joint-stock company, aligning with Saudi Arabia's Vision 2030 to enhance the Hajj and Umrah experience. The company serves around 200,000 pilgrims from 48 African countries, ensuring a seamless and comfortable spiritual journey",
+    link: "https://website.ithraa.com.sa/",
     color: "",
     icon: "",
     number: "",
@@ -39,24 +42,12 @@ const PortfolioData: Portfolios[] = [
     rating: "",
   },
   {
-    title: "Restaurant Portal",
-    category: "WordPress",
-    image:
-      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Interactive menu and reservation system",
-    color: "",
-    icon: "",
-    number: "",
-    name: "",
-    role: "",
-    rating: "",
-  },
-  {
-    title: "Tech Startup",
+    title: "Umrahdesk",
     category: "Web Development",
-    image:
-      "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Innovative landing page with animations",
+    image: "/Umrahdesk.png",
+    description:
+      "Umrah Desk is a leading Hajj and Umrah service provider based in the UK, offering comprehensive travel arrangements for pilgrims journeying to Saudi Arabia. The platform ensures a seamless experience with high-quality service, convenience, and comfort. From flight bookings to accommodation and on-ground support, Umrah Desk strives to make religious travel hassle-free and memorable",
+    link: "https://umrahdesk.com/",
     color: "",
     icon: "",
     number: "",
@@ -65,24 +56,12 @@ const PortfolioData: Portfolios[] = [
     rating: "",
   },
   {
-    title: "Fashion Brand",
-    category: "E-Commerce",
-    image:
-      "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Luxury online boutique experience",
-    color: "",
-    icon: "",
-    number: "",
-    name: "",
-    role: "",
-    rating: "",
-  },
-  {
-    title: "Digital Agency",
-    category: "Web Design",
-    image:
-      "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Creative portfolio showcase",
+    title: "Royal Mint Properties",
+    category: "Wordpress",
+    image: "/Royal-Mint-Properties.png",
+    description:
+      "Royal Mint Properties is an estate and letting agency based in London. They offer residential properties for sale and rent, including luxury apartments and townhouses",
+    link: "https://royalmintproperties.com/",
     color: "",
     icon: "",
     number: "",

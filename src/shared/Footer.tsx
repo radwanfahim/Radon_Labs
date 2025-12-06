@@ -1,7 +1,7 @@
 import { AiOutlineInstagram, AiOutlineTwitter } from "solid-icons/ai";
 import { BiLogosGmail } from "solid-icons/bi";
 import { FaBrandsFacebook, FaBrandsLinkedinIn } from "solid-icons/fa";
-import logo from "../../public/Logo.png";
+import logo from "/Logo.png";
 
 const currentYear = new Date().getFullYear();
 

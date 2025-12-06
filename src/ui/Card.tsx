@@ -12,6 +12,7 @@ interface CardData {
   name: string;
   role: string;
   rating: any;
+  link: string;
 }
 
 const Card = ({
@@ -25,6 +26,7 @@ const Card = ({
   name,
   role,
   rating,
+  link,
 }: CardData) => {
   const Icon = icon;
   const hasIcon = Boolean(Icon);
@@ -51,7 +53,7 @@ const Card = ({
         }  rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity`}
       ></div>
 
-      <div class="relative">
+      <a class="relative" {...(link && { href: link })} target="_blank">
         {
           /* number */
           hasNumber && (
@@ -83,6 +85,8 @@ const Card = ({
                 <img
                   src={image}
                   alt={title}
+                  width={200}
+                  height={200}
                   class={`w-screen h-full object-cover rounded-t-xl ${
                     hasImage ? "group-hover:scale-110 transition-transform" : ""
                   } duration-500`}
@@ -127,9 +131,9 @@ const Card = ({
           </h3>
 
           <p
-            class={`${
-              hasRating ? "text-gray-300" : "text-gray-600"
-            }  leading-relaxed`}
+            class={`${hasRating ? "text-gray-300" : "text-gray-600"}  ${
+              hasImage ? "line-clamp-3" : ""
+            } leading-relaxed`}
           >
             {description}
           </p>
@@ -142,7 +146,7 @@ const Card = ({
             <h1 class="text-sm text-gray-400">{role}</h1>
           </div>
         )}
-      </div>
+      </a>
 
       {/* steps dash */}
       {hasNumber && parseInt(number) < 4 && (

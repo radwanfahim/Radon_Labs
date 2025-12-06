@@ -13,6 +13,7 @@ interface Process {
   name: string;
   role: string;
   rating: any;
+  link: string;
 }
 
 const ProcessData: Process[] = [
@@ -28,6 +29,7 @@ const ProcessData: Process[] = [
     name: "",
     role: "",
     rating: "",
+    link: "",
   },
   {
     icon: FaRegularChessKing,
@@ -41,6 +43,7 @@ const ProcessData: Process[] = [
     name: "",
     role: "",
     rating: "",
+    link: "",
   },
   {
     icon: OcCode2,
@@ -54,6 +57,7 @@ const ProcessData: Process[] = [
     name: "",
     role: "",
     rating: "",
+    link: "",
   },
   {
     icon: AiOutlineRocket,
@@ -67,6 +71,7 @@ const ProcessData: Process[] = [
     name: "",
     role: "",
     rating: "",
+    link: "",
   },
 ];
 
