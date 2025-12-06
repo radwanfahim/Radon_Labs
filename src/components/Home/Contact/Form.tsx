@@ -5,6 +5,7 @@ import { AiFillCheckCircle } from "solid-icons/ai";
 
 const Form = () => {
   const [success, setSuccess] = createSignal(false);
+  const [err, setErr] = createSignal(false);
 
   // NOTE this filterout the performance and add others
   const interestedServices = [
@@ -28,14 +29,17 @@ const Form = () => {
     const data = await response.json();
     if (data.success) {
       setSuccess(true);
+      setErr(false);
       e.target.reset();
     } else {
       setSuccess(false);
+      setErr(true);
     }
   };
 
   return (
     <div class="">
+      {err && <div>{err()}</div>}
       <form onSubmit={handleFormData}>
         {/* name */}
         <fieldset class="fieldset ">
