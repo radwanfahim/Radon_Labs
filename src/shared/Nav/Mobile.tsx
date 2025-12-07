@@ -39,28 +39,38 @@ const Mobile = ({ isScrolled, navLinks, setIsOpen, isOpen }: MobileProps) => {
       </button>
 
       {/* when open */}
-      {isOpen() && (
-        <ul
-          class={`absolute transition-all duration-500 -top-0 -z-10 transform -translate-x-1/2 left-1/2 flex flex-col gap-5 items-center bg-white py-10 w-full ${
-            isScrolled() ? "text-red-600" : "text-white"
-          } ${isOpen() ? "translate-y-0" : "-translate-y-20"}`}
-        >
-          {
-            <For each={navLinks}>
-              {(link) => (
-                <li class="">
-                  <a
-                    class="text-gray-800 font-bold hover:scale-110 transition-transform"
-                    href={link.href}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              )}
-            </For>
-          }
-        </ul>
-      )}
+
+      <ul
+        class={`absolute transition-all duration-500 ease-in-out -top-0 -z-10 transform flex flex-col gap-5 items-center bg-white pb-10 pt-20 w-full left-1/2 -translate-x-1/2 ${
+          isScrolled() ? "text-red-600" : "text-white"
+        } ${
+          isOpen()
+            ? "translate-y-0 opacity-100 pointer-events-auto"
+            : "-translate-y-20 opacity-0 pointer-events-none"
+        }`}
+      >
+        {
+          <For each={navLinks}>
+            {(link, i) => (
+              <li
+                class="transition-all duration-300"
+                style={{
+                  "transition-delay": `${i() * 80}ms`,
+                  transform: isOpen() ? "translateY(0)" : "translateY(-10px)",
+                  opacity: isOpen() ? 1 : 0,
+                }}
+              >
+                <a
+                  class="text-gray-800 font-bold hover:scale-110 transition-transform"
+                  href={link.href}
+                >
+                  {link.name}
+                </a>
+              </li>
+            )}
+          </For>
+        }
+      </ul>
     </div>
   );
 };

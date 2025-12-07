@@ -25,11 +25,11 @@ const Desktop = () => {
   ];
   return (
     <nav
-      class={`open-sans fixed w-full z-50 transition-all duration-300 ${
+      class={`open-sans fixed w-full z-50 transition-all duration-300  ${
         isScrolled() ? "bg-white shadow-lg pb-4" : "bg-transparent "
       }`}
     >
-      <div class="container mx-auto custom-container flex items-center justify-between pt-4 relative">
+      <div class="container mx-auto custom-container flex items-center justify-between pt-4 relative lg:px-0 px-3">
         <a href="/" class="flex gap-2 font-bold text-xl items-center">
           <img width={40} height={40} src={logo} alt="logo" />
           <h1
