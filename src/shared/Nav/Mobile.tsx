@@ -53,7 +53,7 @@ const Mobile = ({ isScrolled, navLinks, setIsOpen, isOpen }: MobileProps) => {
           <For each={navLinks}>
             {(link, i) => (
               <li
-                class="transition-all duration-300"
+                class="transition-all duration-500"
                 style={{
                   "transition-delay": `${i() * 80}ms`,
                   transform: isOpen() ? "translateY(0)" : "translateY(-10px)",
